@@ -6,14 +6,18 @@
   <title>Moonxel - Chapters</title>
   <!-- Add your CSS stylesheets and external dependencies here -->
   <link rel="stylesheet" href="styles.css">
-  <script src="navbar.js"></script> <!-- Include the JavaScript file -->
 </head>
 <body>
-  <!-- Include the header -->
-  <?php include 'header.php'; ?>
-
-  <!-- Placeholder for the dynamically loaded navigation bar -->
-  <div id="navbar-placeholder"></div>
+  <!-- Navigation bar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="novels.html">Novels</a></li>
+      <li><a href="chapters.php">Chapters</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
   <!-- Content area -->
   <main>
@@ -21,7 +25,9 @@
     <p>Here you can find the chapters of your webnovel.</p>
   </main>
 
-  <!-- Include the footer -->
-  <?php include 'footer.php'; ?>
+  <!-- Footer section -->
+  <footer>
+    <p>&copy; 2023 Moonxel. All rights reserved.</p>
+  </footer>
 </body>
 </html>
