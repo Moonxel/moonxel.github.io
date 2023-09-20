@@ -5,27 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moonxel</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="navbarstyles.css">
+    <script src="navBar.js" type="module"></script>
 </head>
 <body>
 
-<div class="navbar" id="navbar">
-    <a href="#home">Home</a>
-    <a href="#projects">Projects</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">&#9776;</a>
-</div>
-
 <main>
     <h1>Home</h1>
-    <h3>Excel D J Sambow</h3>
+    <h3>I am Excel</h3>
     <p>Welcome to my page, dear traveler.</p>
 </main>
 
-<footer>
-    <p>&copy; 2023 Moonxel. All rights reserved.</p>
-</footer>
+<script type="module">
+    import { createNavBar } from './navBar.js';
 
+    const navbar = createNavBar();
+    document.body.prepend(navbar);
+</script>
+
+<!-- Async script loader for footer -->
+<script>
+    async function loadFooterScript() {
+        const footerModule = await import('./footer.js');
+        const { createFooter } = footerModule;
+        
+        const footerContainer = document.createElement("div");
+        footerContainer.id = "footer-container";
+        document.body.appendChild(footerContainer);
+        
+        const footer = createFooter();
+        footerContainer.appendChild(footer);
+    }
+
+    loadFooterScript();
+</script>
 </body>
 </html>
